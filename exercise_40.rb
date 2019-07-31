@@ -10,20 +10,28 @@
 # [4, 2, 11, 6, 10], [4, 11, 10])
     def find_peaks(array)
         arr=[]
+        #getting fst ele if its greater than its right neighbour
+        #for all arrays
         if array[0] > array[1]
             arr << array[0]
-            if array[-1] > array[-2]
-                arr << array[-1]
-            end
         end
-        
 
+#so we have ele of index 0 now start loop from 1 until the length of array
+#now compare ele with its left and right both 
+#push ele to new  array if its greater then its right nad left
+#incriment the loop until it reaches the end
         i = 1
         while i < array.length - 1
             if array[i] > array[i+1] && array[i] > array[i-1]
                 arr << array[i]
             end 
             i += 1
+        end
+
+        #getting last ele if its greater than the ele on its left 
+        #for all array
+        if array[-1] > array[-2]
+            arr << array[-1]
         end
         
         return arr

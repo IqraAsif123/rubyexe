@@ -30,6 +30,24 @@ def compress_string(string)
   
     new_string
 end
+# def compress_string(string)
+#     new_string = []
+#     #  converting string to an array get unique
+#    split = string.split("")
+#    split.each do |char|
+#       count = 1
+#     #   converting the original string to array
+#       string.chars.each do  |word|
+#         # compairing two array
+#             if char == word
+#             count += 1
+#             end
+#         end
+#         # pushing the uniqe element with the frequency of repeating of itself to new empty array
+#         new_string << "#{count}#{char}"
+#     end
+#     return new_string.join("")
+#  end
 # Driver Code: Do not edit under this line
 
 # check_solution runs a single test case and prints whether it was
