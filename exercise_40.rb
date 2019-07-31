@@ -5,16 +5,30 @@
 # The first or last element of the array is considered a "peak" if it is greater than it's one neighbour
 
 # Write Your method code here
-def find_peaks(array)
-    
-    array.each_with_index do |ele,i|
-        if ele[i] > ele[i+1] && ele[i] > ele[i-1]
-            array << ele
+# [1, 3, 5, 4], [5])
+# [4, 2, 3, 6, 10], [4, 10])
+# [4, 2, 11, 6, 10], [4, 11, 10])
+    def find_peaks(array)
+        arr=[]
+        if array[0] > array[1]
+            arr << array[0]
+            if array[-1] > array[-2]
+                arr << array[-1]
+            end
         end
         
+
+        i = 1
+        while i < array.length - 1
+            if array[i] > array[i+1] && array[i] > array[i-1]
+                arr << array[i]
+            end 
+            i += 1
+        end
+        
+        return arr
+
     end
-    return array
-end
 # Driver Code: Do not edit under this line
 
 # check_solution runs a single test case and prints whether it was

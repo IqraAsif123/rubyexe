@@ -5,27 +5,46 @@
 
 # Write Your method code here
 def bubble_sort(array)
+
     if array.size==1 || array.size==0
-        return array
+      return array
+    end
     
     sorted = false
-while sorted != true
-    sorted = true
- swapped = false
-  array.each_with_index do |x,i|
- 
-      if array[i] > array[i+1]
-        array[i], array[i+1] = array[i+1], array[i] #swapping
-        swapped = true
-      end
+    while !sorted
+      sorted = true
+
+      array.each_with_index do |x,i|
+      
+        if i < array.length - 1
+            if array[i] > array[i+1]
+                array[i], array[i+1] = array[i+1], array[i] #swapping
+                sorted = false
+            end
+        end
     end
-    return array  
-#   if swapped == false
-#     sorted = true
-#   end
+    end
+    return array
 end
-end
-end
+# def bubble_sort(array)
+#     # if array.size==1 || array.size==0
+#     #     return array
+#      swapped = true
+#      lenght = array.length-1
+#     while swapped do
+#         i = 0
+#         swapped = false
+#         while i < lenght
+#             if array[i] > array[i +1]
+#                 array[i], array[i+1] = array[i+1], array[i]
+#                 swapped = true
+#             end
+#            i = i + 1
+#         end
+#     end
+#     return array
+# end
+# #end
 # Driver Code: Do not edit under this line
 
 # check_solution runs a single test case and prints whether it was

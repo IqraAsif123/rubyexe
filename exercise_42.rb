@@ -4,7 +4,32 @@
 # For example "aaabbc" is compressed to "3a2bc".
 
 # Write Your method code here
-
+def display_count(count)
+    if count == 1
+      #""
+    else
+      count.to_s
+    end
+  end
+def compress_string(string)
+    new_string = "" 
+    last_char = nil
+    count = 0
+  
+    string.chars.each do |char|
+      if char == last_char
+        count += 1
+      else
+        new_string << "#{display_count(count)}#{last_char}" if last_char
+        last_char = char
+        count = 1
+      end
+    end
+  
+    new_string << "#{display_count(count)}#{last_char}" if last_char
+  
+    new_string
+end
 # Driver Code: Do not edit under this line
 
 # check_solution runs a single test case and prints whether it was
