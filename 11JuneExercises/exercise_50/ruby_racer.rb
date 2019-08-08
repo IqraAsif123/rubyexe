@@ -72,10 +72,13 @@ end
          p game_board.join("")
     end
 end
+
   # For Part 2:
   # Prints the ranking board (Scoreboard)
-  # def print_scoreboard
-  # end
+   def print_scoreboard
+    @player_position.sort_by do |players|
+      
+   end
 
 end
 
@@ -103,8 +106,15 @@ end
  #### END HELPER CODE ####
 
  #### DRIVER CODE - DO NOT EDIT BELOW FOR PART 1 ####
-
-players = [:a, :b]
+ players=[]
+ puts "how many players you want to add "
+ quantity=gets.chomp.to_i
+ quantity.times do
+ puts "enter the name"
+ name=gets.chomp
+ players << name
+ end
+ 
 
 game = RubyRacer.new(players)
 
@@ -112,7 +122,7 @@ game = RubyRacer.new(players)
 # Then pause, so users can see the starting board. The fun can begin!
 reset_screen
 puts game.print_gameboard
-sleep(1)
+sleep(1)p
 
 # Run the race.
 until game.finished?
@@ -137,5 +147,5 @@ end
 
 # Once the race is finished, report the winner.
 puts "Player '#{game.winner}' wins!"
-
+game.print_scoreboard
  #### END OF DRIVER CODE ####
