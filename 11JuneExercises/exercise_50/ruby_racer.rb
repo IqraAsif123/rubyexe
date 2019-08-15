@@ -72,16 +72,15 @@ end
          p game_board.join("")
     end
 end
+end
 
   # For Part 2:
   # Prints the ranking board (Scoreboard)
-   def print_scoreboard
+  def print_scoreboard
     @player_position.sort_by do |players|
-      
-   end
-
-end
-
+    end
+  end
+#i have to work on this to print the score fro player 
 
  #### HELPER CODE - DO NOT EDIT THIS SECTION ####
  
@@ -114,15 +113,13 @@ end
  name=gets.chomp
  players << name
  end
- 
-
 game = RubyRacer.new(players)
 
 # Clear the screen and print the board with players in their starting positions.
 # Then pause, so users can see the starting board. The fun can begin!
 reset_screen
 puts game.print_gameboard
-sleep(1)p
+sleep(1)
 
 # Run the race.
 until game.finished?
