@@ -53,12 +53,10 @@ class Oven
         end
     end
     def bigger_tray
-        if $quantity > @recommended_quantity
+        #  if $quantity > @recommended_quantity
             for i in (0..$time_for_cookie).to_a.reverse
-                sleep(0.2)
-                "#{i} seconds to go"
             end
-        end
+        #  end
     end
 end
 
@@ -95,19 +93,36 @@ end
 
 puts "how many sec you want to bake your cookie"
 $time_for_cookie = gets.chomp().to_i
-puts "your order for #{$quantity} #{$name_of_cookie} cookies is accepted "
+ puts " #{$quantity} #{$name_of_cookie} cookies are in the oven  "
+
+
+
 for i in (0..$time_for_cookie).to_a.reverse
     sleep(0.2)
-    puts "#{i} seconds to go"
+     puts "#{i} seconds to go"
 end
-
-puts "your batch of remaning #{$name_of_cookie} is proceeding"
-puts oven.bigger_tray
-
-
 if $name_of_cookie == "peanut_butter"
     sleep(1)
  puts peanut_butter.cookie_status
 elsif $name_of_cookie == "chocolate_chips"
 puts chocolate_chips.cookie_status
+end
+
+
+
+#get the instance variable outside theclass
+oven.bigger_tray
+if $quantity  > oven.instance_variable_get(:@recommended_quantity)
+puts "your batch of remaning #{$name_of_cookie} is proceeding"
+# puts oven.bigger_tray 
+for i in (0..$time_for_cookie).to_a.reverse
+    sleep(0.2)
+     puts "#{i} seconds to go"
+end
+if $name_of_cookie == "peanut_butter"
+    sleep(1)
+ puts peanut_butter.cookie_status
+elsif $name_of_cookie == "chocolate_chips"
+puts chocolate_chips.cookie_status
+end
 end
