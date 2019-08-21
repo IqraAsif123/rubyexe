@@ -126,3 +126,4 @@ elsif $name_of_cookie == "chocolate_chips"
 puts chocolate_chips.cookie_status
 end
 end
+ # still some part to work on 
